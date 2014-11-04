@@ -1,4 +1,4 @@
-# Myo-Unity-iOS-km
+# Myo-Unity-iOS-Plugin
 ================
 
 This is the readme for the Myo iOS Plugin for Unity3D. 
