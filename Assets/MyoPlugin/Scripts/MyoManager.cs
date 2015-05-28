@@ -187,16 +187,16 @@ public class MyoManager : MonoBehaviour
 		instance.isEnabled = false;
 	}
 
-	/// <summary>
-	/// Automatically pairs with any Myo device available. Use this when you only expect there to be one Myo in range. 
-	/// </summary>
-	public static void AttachToAny()
-	{
-#if UNITY_IPHONE && !UNITY_EDITOR
-		isAttaching = true;
-		MyoBinding._attachToAny();
-#endif
-	}
+//	/// <summary>
+//	/// Automatically pairs with any Myo device available. Use this when you only expect there to be one Myo in range. 
+//	/// </summary>
+//	public static void AttachToAny()
+//	{
+//#if UNITY_IPHONE && !UNITY_EDITOR
+//		isAttaching = true;
+//		MyoBinding._attachToAny();
+//#endif
+//	}
 
 	/// <summary>
 	/// Start pairing procedure where the myo must tap the device in order to connect. 

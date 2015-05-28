@@ -91,7 +91,7 @@ static MyoUnity* _MyoUnity;
             [TLMPoseTypeWaveIn] = @"WAVE_IN", /**< Turning your palm towards yourself.*/
             [TLMPoseTypeWaveOut] = @"WAVE_OUT", /**< Turning your palm away from yourself.*/
             [TLMPoseTypeFingersSpread] = @"FINGERS_SPREAD", /**< Spreading your fingers and extending your palm.*/
-            [TLMPoseTypeThumbToPinky] = @"THUMB_TO_PINKY" /**< Twist your wrist in towards yourself.*/
+            [TLMPoseTypeDoubleTap] = @"DOUBLE_TAP" /**< Twist your wrist in towards yourself.*/
         };
         
         //send message to unity with pose as string
@@ -126,10 +126,10 @@ static MyoUnity* _MyoUnity;
     }
 }
 
-- (void) attachToAny
-{
-    [[TLMHub sharedHub] attachToAny];
-}
+//- (void) attachToAny
+//{
+//    [[TLMHub sharedHub] attachToAny];
+//}
 
 - (bool) presentPairing
 {
@@ -188,10 +188,10 @@ extern "C" {
         //todo
     }
 
-    void _attachToAny()
-    {
-        [[MyoUnity Instance] attachToAny];
-    }
+//    void _attachToAny()
+//    {
+//        [[MyoUnity Instance] attachToAny];
+//    }
 
     bool _presentPairing()
     {

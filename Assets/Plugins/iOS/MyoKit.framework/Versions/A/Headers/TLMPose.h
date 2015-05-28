@@ -21,13 +21,13 @@
    Represents different hand poses.
  */
 typedef NS_ENUM (NSInteger, TLMPoseType) {
-    TLMPoseTypeRest          = 0, /**< Rest pose.*/
-    TLMPoseTypeFist          = 1, /**< User is making a fist.*/
-    TLMPoseTypeWaveIn        = 2, /**< User has an open palm rotated towards the posterior of their wrist.*/
-    TLMPoseTypeWaveOut       = 3, /**< User has an open palm rotated towards the anterior of their wrist.*/
-    TLMPoseTypeFingersSpread = 4, /**< User has an open palm with their fingers spread away from each other.*/
-    TLMPoseTypeThumbToPinky  = 6, /**< User is touching the tip of their thumb to the tip of their pinky.*/
-    TLMPoseTypeUnknown       = 0xffff /**< Unknown pose.*/
+    TLMPoseTypeRest,            /**< Rest pose.*/
+    TLMPoseTypeFist,            /**< User is making a fist.*/
+    TLMPoseTypeWaveIn,          /**< User has an open palm rotated towards the posterior of their wrist.*/
+    TLMPoseTypeWaveOut,         /**< User has an open palm rotated towards the anterior of their wrist.*/
+    TLMPoseTypeFingersSpread,   /**< User has an open palm with their fingers spread away from each other.*/
+    TLMPoseTypeDoubleTap,       /**< User taps their thumb to their middle finger twice.*/
+    TLMPoseTypeUnknown = 0xffff /**< Unknown pose.*/
 };
 
 /** The TLMMyo posting the pose. */

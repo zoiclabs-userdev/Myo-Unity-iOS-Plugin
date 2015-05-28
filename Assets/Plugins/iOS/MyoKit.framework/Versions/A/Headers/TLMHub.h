@@ -51,6 +51,14 @@ extern NSString *const TLMHubDidDisconnectDeviceNotification;
 @interface TLMHub : NSObject
 
 /**
+ Represents the locking policy for Myos connected to the TLMHub.
+ */
+typedef NS_ENUM (NSInteger, TLMLockingPolicy) {
+    TLMLockingPolicyStandard, /**< Pose events are not sent while a TLMMyo is locked. */
+    TLMLockingPolicyNone      /**< Pose events are always sent. */
+};
+
+/**
  Controls how many TLMMyos are allowed to connect to your app at once. Default value is 1. Undefined behaviour for
  myoConnectionAllowance > 2.
  */
@@ -73,6 +81,17 @@ extern NSString *const TLMHubDidDisconnectDeviceNotification;
 @property (nonatomic, readwrite) BOOL shouldNotifyInBackground;
 
 /**
+ Set whether Myo usage data should be sent to Thalmic Labs. Default value is YES.
+ */
+@property (nonatomic, readwrite) BOOL shouldSendUsageData;
+
+/**
+ The locking policy enforced by this TLMHub. Defaults to TLMLockingPolicyStandard.
+ @see TLMLockingPolicy
+ */
+@property (nonatomic, readwrite) TLMLockingPolicy lockingPolicy;
+
+/**
  Singleton accessor.
  @return The shared instance of the TLMHub class.
  */
@@ -83,15 +102,6 @@ extern NSString *const TLMHubDidDisconnectDeviceNotification;
  @return NSArray containing the connected TLMMyos.
  */
 - (NSArray *)myoDevices;
-
-/**
- Searches for any TLMMyo and attaches to it. Once attached, the TLMHub will maintain the connection, even if the
- TLMMyo is disconnected. Once a TLMMyo is attached, this method needs to be called again in order to pair with another
- TLMMyo. If the myoConnectionAllowance has been reached when this method is called, nothing happens. If another
- attaching method has been invoked, nothing happens.
- @see myoConnectionAllowance
- */
-- (void)attachToAny;
 
 /**
  Invoking this method instructs the TLMHub to wait for a TLMMyo to touch the iOS device. Once a TLMMyo is attached, this
@@ -113,3 +123,5 @@ extern NSString *const TLMHubDidDisconnectDeviceNotification;
 - (void)detachFromMyo:(TLMMyo *)myo;
 
 @end
+
+/// @example TLHMViewController.m
