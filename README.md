@@ -1,41 +1,19 @@
 # Myo-Unity-iOS-Plugin
 ================
 
-This is the readme for the Myo iOS Plugin for Unity3D. 
+This is the readme for the Myo iOS Plugin for Unity3D.
 
 ## Installation
 
-Simply add the files in the Assets folder to your Unity project Assets folder. 
-
-```
-\Assets\MyoPlugin
-    +---Demo
-        +---Scenes
-        |       MyoPluginDemo.unity
-        +---Scripts
-        |       MyoPluginDemo.cs
-    +---Prefabs
-    |       MyoManager.prefab
-    +---Scripts
-    |       MyoBinding.cs
-    |       MyoManager.cs
-\Assets\Plugins
-    +---iOS
-    |       MyoUnity.h
-    |       MyoUnity.mm
-    |       MyoKit.framework
-```
+Add the unitypackage to your project
 
 ## Building the Demo
 
 1. Switch your Build Settings to iOS.
-2. Make sure your Target iOS Version is 7.0 or greater (Limitation of Myo iOS SDK).
+2. Make sure your Target iOS Version (in Build Settings > Player Settings is 7.0 or greater, this is needed for Bluetooth LE operation.
 3. Open the scene "MyoPlugin/Demo/Scenes/MyoPluginDemo.unity" and add the scene to the Scenes in Build Settings.
 4. Build the Unity project.
-5. In XCode, "MyoKit.framework" sometimes doesn't automatically transfer. Copy paste it into the Libraries folder and add it to the project.
-6. In Build Phases, add "MyoKit.framework", "CoreBluetooth.framework", and make sure "SystemConfiguration.framework" is already added.
-7. Add "-ObjC" to Other Linker Flags in the Build Settings tab.
-8. Build and deploy to your iOS device!
+5. Build and deploy to your iOS device!
 
 ## Using the Demo
 
@@ -49,8 +27,8 @@ Here's a trimmed down version of the MyoManager.cs class, which should be your o
 
 ```C#
 
-/// Manager class for Myo iOS Plugin. Use only this public API to interface with Myo inside of Unity. 
-public class MyoManager : MonoBehaviour 
+/// Manager class for Myo iOS Plugin. Use only this public API to interface with Myo inside of Unity.
+public class MyoManager : MonoBehaviour
 {
     /// Subscribe to this event to recieve Pose event notifications
     public static event Action<MyoPose> PoseEvent;
@@ -64,19 +42,19 @@ public class MyoManager : MonoBehaviour
     /// Uninitialize and disables Myo plugin
     public static void Uninitialize();
 
-    /// Automatically pairs with any Myo device available. Use this when you only expect there to be one Myo in range. 
+    /// Automatically pairs with any Myo device available. Use this when you only expect there to be one Myo in range.
     public static void AttachToAny();
 
-    /// Automatically pairs with the first Myo device that touches the iOS device. 
+    /// Automatically pairs with the first Myo device that touches the iOS device.
     public static void AttachToAdjacent();
 
-    /// Presents Pairing UI that allows user to scan for Myo devices, and pair/unpair Myos at will. 
+    /// Presents Pairing UI that allows user to scan for Myo devices, and pair/unpair Myos at will.
     public static bool PresentPairing();
 
     /// Gets the rotation of the Myo device, converted into Unity's coordinate system (See MyoToUnity).
     public static Quaternion GetQuaternion()
 
-    /// Converts a Quaternion from Myo coordinate system to Unity coordinate system. 
+    /// Converts a Quaternion from Myo coordinate system to Unity coordinate system.
     /// Myo X = Unity -Z
     /// Myo Y = Unity X
     /// Myo Z = Unity Y
@@ -95,9 +73,9 @@ public class MyoManager : MonoBehaviour
 
 If you have feedback for this plugin contact Katlan Merrill (kmerrill@zoicstudios.com) or discuss the plugin in the [forum feature thread](https://developer.thalmic.com/forums/topic/282/?page=1#post-1659).
 
-This is intended to be a community project, so support directly from the developer may be minimal. 
+This is intended to be a community project, so support directly from the developer may be minimal.
 
-
+Updated to Myo iOS SDK 0.5.1 by Stephan van der Feest (stephan@vanderfeest.com)
 
 
 

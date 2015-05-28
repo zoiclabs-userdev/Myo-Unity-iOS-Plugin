@@ -15,7 +15,13 @@
    Once removed, the device can be discovered again by clicking scan. If a Myo's firmware verison is out of date, a
    yellow circle will appear beside it. This Myo cannot be connected until the firmware version is updated.
  */
-@interface TLMSettingsViewController : UITableViewController
+IB_DESIGNABLE
+@interface TLMSettingsViewController : UIViewController
+
+/**
+   If set to true, a done button is added to the navigationItem which will dismiss the view controller when tapped.
+ */
+@property (nonatomic, readwrite) IBInspectable BOOL showDoneButton;
 
 /**
    Returns a UINavigationController that contains the TLMSettingsViewController. You can present this modally.
@@ -33,8 +39,5 @@
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
     __attribute__((unavailable("initWithNibName not available. Use init.")));
-
-- (instancetype)initWithStyle:(UITableViewStyle)style
-    __attribute__((unavailable("initWithStyle not available. Use init.")));
 
 @end

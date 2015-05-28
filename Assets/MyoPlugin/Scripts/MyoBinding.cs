@@ -13,7 +13,7 @@ namespace MyoUnity
 		WAVE_IN = 2,
 		WAVE_OUT = 3,
 		FINGERS_SPREAD = 4,
-		THUMB_TO_PINKY = 5
+		DOUBLE_TAP = 5
     };
 	
 	public enum MyoVibrateLength
@@ -29,8 +29,8 @@ namespace MyoUnity
         [DllImport("__Internal")]
         public static extern void _initialize();
 		
-		[DllImport("__Internal")]
-        public static extern void _attachToAny();
+//		[DllImport("__Internal")]
+//        public static extern void _attachToAny();
 
 		[DllImport("__Internal")]
 		public static extern void _attachToAdjacent();

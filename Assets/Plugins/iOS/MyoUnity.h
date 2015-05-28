@@ -19,7 +19,7 @@
 
 - (void) didReceiveOrientationEvent:(NSNotification*)notification;
 
-- (void) attachToAny;
+//- (void) attachToAny;
 
 - (bool) presentPairing;
 
@@ -37,7 +37,7 @@ extern "C"
 
     void _uninitialize();
 
-    void _attachToAny();
+//    void _attachToAny();
 
     bool _presentPairing();
 
